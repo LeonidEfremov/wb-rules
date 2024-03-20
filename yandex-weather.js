@@ -41,7 +41,7 @@ var weatherVirtualDevice = defineVirtualDevice(virtualDevice, {
           wind_speed: {
                title: "Wind speed",
                type: "value",
-               units: "",
+               units: "m/s",
                value: null,
                readonly: true,
                order: 4
@@ -64,7 +64,7 @@ var weatherVirtualDevice = defineVirtualDevice(virtualDevice, {
                title: "Condition",
                type: "text",
                value: null,
-               order: 8
+               order: 7
           }
      }
 });
@@ -74,7 +74,7 @@ defineRule({
      then: _updateWeather.bind(this, lat, lon, api_key)
 });
 
-_updateWeather(lat, lon, api_key);
+// _updateWeather(lat, lon, api_key);
 
 function _updateWeather(lat, lon, apiKey) {
 

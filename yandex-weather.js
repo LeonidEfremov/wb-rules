@@ -74,12 +74,10 @@ defineRule({
      then: _updateWeather.bind(this, lat, lon, api_key)
 });
 
-// _updateWeather(lat, lon, api_key);
-
 function _updateWeather(lat, lon, apiKey) {
 
-     var url = "https://api.weather.yandex.ru/v2/informers?lat=" + lat + "&lon=" + lon;
-     var command = "curl --header 'X-Yandex-API-Key: " + apiKey + "' '" + url + "' --silent";
+     var url = "https://api.weather.yandex.ru/v2/informers?lat={}&lon={}".format(lat, lon);
+     var command = "curl --header 'X-Yandex-API-Key: {}' '{}' --silent".format(apiKey, url);
 
      runShellCommand(command, {
           captureOutput: true,

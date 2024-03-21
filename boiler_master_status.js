@@ -6,14 +6,14 @@ var master_status_device = "wbe2-i-opentherm_boiler_master";
 defineVirtualDevice(master_status_device, {
   title: "Boiler Master Status",
   cells: {
-    bit0: { title: "CH enable", type: "switch", value: 0, readonly: true },
-    bit1: { title: "DHW enabled", type: "switch", value: 0, readonly: true },
-    bit2: { title: "Cooling enabled", type: "switch", value: 0, readonly: true },
-    bit3: { title: "OTC active", type: "switch", value: 0, readonly: true },
-    bit4: { title: "CH2 enable", type: "switch", value: 0, readonly: true },
-    bit5: { title: "Reserved", type: "switch", value: 0, readonly: true },
-    bit6: { title: "Reserved", type: "switch", value: 0, readonly: true },
-    bit7: { title: "Reserved", type: "switch", value: 0, readonly: true }
+    bit0: { title: "CH enable", type: "switch", value: false, readonly: true },
+    bit1: { title: "DHW enabled", type: "switch", value: false, readonly: true },
+    bit2: { title: "Cooling enabled", type: "switch", value: false, readonly: true },
+    bit3: { title: "OTC active", type: "switch", value: false, readonly: true },
+    bit4: { title: "CH2 enable", type: "switch", value: false, readonly: true },
+    bit5: { title: "Reserved", type: "switch", value: false, readonly: true },
+    bit6: { title: "Reserved", type: "switch", value: false, readonly: true },
+    bit7: { title: "Reserved", type: "switch", value: false, readonly: true }
   }
 });
 

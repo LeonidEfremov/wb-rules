@@ -5,14 +5,14 @@ var slave_status_device = "wbe2-i-opentherm_boiler_slave";
 defineVirtualDevice(slave_status_device, {
   title: "Boiler Slave Status",
   cells: {
-    bit0: { title: "Fault indication", type: "switch", value: 0, readonly: true },
-    bit1: { title: "CH mode", type: "switch", value: 0, readonly: true },
-    bit2: { title: "DHW mode", type: "switch", value: 0, readonly: true },
-    bit3: { title: "Flame status", type: "switch", value: 0, readonly: true },
-    bit4: { title: "Cooling status", type: "switch", value: 0, readonly: true },
-    bit5: { title: "CH2 mode", type: "switch", value: 0, readonly: true },
-    bit6: { title: "Diagnostic indication", type: "switch", value: 0, readonly: true },
-    bit7: { title: "Reserved", type: "switch", value: 0, readonly: true }
+    bit0: { title: "Fault indication", type: "switch", value: false, readonly: true },
+    bit1: { title: "CH mode", type: "switch", value: false, readonly: true },
+    bit2: { title: "DHW mode", type: "switch", value: false, readonly: true },
+    bit3: { title: "Flame status", type: "switch", value: false, readonly: true },
+    bit4: { title: "Cooling status", type: "switch", value: false, readonly: true },
+    bit5: { title: "CH2 mode", type: "switch", value: false, readonly: true },
+    bit6: { title: "Diagnostic indication", type: "switch", value: false, readonly: true },
+    bit7: { title: "Reserved", type: "switch", value: false, readonly: true }
   }
 });
 

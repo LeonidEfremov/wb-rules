@@ -4,7 +4,7 @@ var api_key = "";
 
 var virtualDevice = "yandex-weather";
 
-defineVirtualDevice(virtualDevice, {
+var weatherVirtualDevice = defineVirtualDevice(virtualDevice, {
      title: "Yandex Weather",
      cells: {
           obs_time: {

@@ -1,3 +1,3 @@
-function hasFlag(number, flag) {
+exports.hasFlag = function hasFlag(number, flag) {
     return (number & flag) === flag;
 }

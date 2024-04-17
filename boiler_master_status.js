@@ -1,7 +1,7 @@
 var b = require("boiler");
 
-var boiler_status_control = "wbe2-i-opentherm_11/Boiler Status";
 var master_status_device = "wbe2-i-opentherm_boiler_master";
+var boiler_status = "wbe2-i-opentherm_11/Boiler Status";
 
 defineVirtualDevice(master_status_device, {
   title: "Boiler Master Status",
@@ -18,10 +18,13 @@ defineVirtualDevice(master_status_device, {
 });
 
 defineRule("boiler_master_status", {
-  whenChanged: [boiler_status_control],
-  then: function (newValue, devName, cellName) {
+  whenChanged: [boiler_status],
+  then: _onChange
+});
 
-    var hb = (newValue).toString().substring(2, 4);
+function _onChange(newValue) {
+
+    var hb = ("0000" + newValue).slice(-4).substring(2, 4);
 
     dev[master_status_device]["bit0"] = b.hasFlag(hb, 2);
     dev[master_status_device]["bit1"] = b.hasFlag(hb, 4);
@@ -31,5 +34,6 @@ defineRule("boiler_master_status", {
     dev[master_status_device]["bit5"] = b.hasFlag(hb, 64);
     dev[master_status_device]["bit6"] = b.hasFlag(hb, 128);
     dev[master_status_device]["bit7"] = b.hasFlag(hb, 256);
-  }
-});
+};
+
+_onChange(dev[boiler_status]);
